@@ -1,4 +1,4 @@
-🚀 Character Explorer
+# 🚀 Character Explorer
 
 Aplicación web desarrollada con React y Tailwind CSS para buscar y explorar personajes de Rick and Morty. Permite consultar información, filtrar por estado y especie, y navegar entre páginas de resultados utilizando una API pública.
 
