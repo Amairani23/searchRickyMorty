@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom"
+
 const statusStyles = {
   Alive: "bg-emerald-400",
   Dead: "bg-red-400",
@@ -11,7 +13,12 @@ const statusLabels = {
 }
 
 export default function CharacterCard({ character }) {
-  const { name, image, status, species, type } = character
+  const { id, name, image, status, species, type } = character
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(`/character/${id}`)
+  }
 
   return (
     <article
@@ -51,6 +58,16 @@ export default function CharacterCard({ character }) {
             <span className="text-gray-200">Tipo:</span> {type || "Ninguno"}
           </p>
         </div>
+
+        <button
+          type="button"
+          onClick={handleClick}
+          className="mt-5 w-full rounded-xl bg-emerald-400 px-4 py-3
+          font-semibold text-gray-950 transition
+          hover:bg-emerald-300 active:scale-95"
+        >
+          Ver detalles
+        </button>
       </div>
     </article>
   )
